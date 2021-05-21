@@ -1,0 +1,138 @@
+.container {
+    margin: 20px auto;
+}
+
+.weather-app {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+p {
+    font-weight: 600;
+    font-size: calc(12px + 1vw);
+    margin: 0;
+}
+
+#city {
+    text-transform: capitalize;
+}
+
+#date {
+    font-size: calc(12px + 0.7vw);
+    text-align: right;
+}
+
+#weather-description {
+    text-transform: capitalize;
+}
+
+.searchbar input {
+    height: calc(1.5em + 0.75rem + 2px);
+    width: 100%;
+    border-radius: 6px;
+}
+
+button {
+    border-radius: 6px;
+    width: 100%;
+    height: calc(1.5em + 0.75rem + 2px);
+}
+
+button.submit {
+    background-color: rgba(255, 69, 0, 0.05);
+    border: 2px orangered solid;
+    transition: all 200ms ease-in-out;
+}
+
+button.submit:hover {
+    cursor: pointer;
+    color: rgba(255, 69, 0, 0.8);
+    background-color: rgba(0, 0, 0, 0.8);
+    border: 2px orangered solid;
+}
+
+button.current-location {
+    background-color: rgba(255, 69, 0, 0.05);
+    border: 2px black solid;
+    transition: all 200ms ease-in-out;
+}
+
+button.current-location:hover {
+    cursor: pointer;
+    color: rgba(255, 69, 0, 0.8);
+    background-color: rgba(0, 0, 0, 0.8);
+    border: 2px black solid;
+}
+
+button.refresh {
+    border: 0;
+    background: none;
+    color: orangered;
+    transition: all 200ms ease-in-out;
+}
+
+button.refresh:hover {
+    cursor: pointer;
+    color: rgba(0, 0, 0, 0.8);
+}
+
+.today {
+    position: relative;
+    background-color: rgba(255, 69, 0, 0.05);
+    border: 2px orangered solid;
+    border-radius: 6px;
+    margin: 10px auto;
+}
+
+.today span {
+    display: block;
+    font-size: calc(16px + 1vw);
+    font-weight: 600;
+}
+
+.today strong {
+    color: orangered;
+    font-size: calc(28px + 4vw);
+    font-weight: 600;
+}
+
+.today sup {
+    color: orangered;
+    font-size: calc(24px + 1vw);
+    font-weight: 600;
+}
+
+.today i {
+    display: block;
+    font-size: calc(70px + 4vw);
+    text-align: center;
+    margin: 30px;
+}
+
+.today ul {
+    position: absolute;
+    bottom: 0;
+    right: 10px;
+    list-style-type: none;
+    padding: 0;
+    text-align: right;
+    font-size: calc(12px + 0.6vw);
+}
+
+.forecast {
+    border: 2px grey solid;
+    border-radius: 6px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.forecast i {
+    font-size: calc(18px + 4vw);
+    margin: 10px;
+}
+
+.forecast strong {
+    color: orangered;
+    font-size: calc(14px + 1vw);
+    padding: 0;
+}
