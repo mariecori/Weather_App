@@ -136,3 +136,9 @@ button.refresh:hover {
     font-size: calc(14px + 1vw);
     padding: 0;
 }
+.footer {
+    font-size: 12px;
+    font-weight: 400;
+    color: grey;
+    padding-top: 10px;
+}
