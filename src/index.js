@@ -66,22 +66,20 @@ function inputWeather(response) {
     temperatureElement.innerHTML = temperature;
 }
 
-function citySearch(event) {
-    event.preventDefault();
-    let searchInput = document.querySelector("#city-input");
-
-    //let city = document.querySelector("#city");
-    //if (searchInput.value) {
-    //    city.innerHTML = `${searchInput.value}`;
-    //}
+function citySearch(city) {
     let apiKey = "dd457ecaa9a81e873abe2de88465eeac";
-    let apiURL = `https://api.openweathermap.org/data/2.5/weather?q=${searchInput.value}&units=metric&appid=${apiKey}`;
-    console.log(apiURL);
+    let apiURL = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`;
     axios.get(apiURL).then(inputWeather);
 }
 
+function handleSubmit(event) {
+    event.preventDefault();
+    let searchInput = document.querySelector("#city-input");
+    citySearch(searchInput.value);
+}
+
 let form = document.querySelector("#search-form");
-form.addEventListener("submit", citySearch);
+form.addEventListener("submit", handleSubmit);
 
 //Current Location
 function locationWeather(response) {
@@ -122,3 +120,6 @@ function geolocation() {
 
 let currentLocation = document.querySelector("#current-location");
 currentLocation.addEventListener("click", geolocation);
+
+//Default city
+citySearch("Munich");
