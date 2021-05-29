@@ -13,29 +13,24 @@ p {
     margin: 0;
 }
 
-#city {
-    text-transform: capitalize;
+a {
+    color: orangered;
+    cursor: default;
+    text-decoration: none;
+    transition: all 200ms ease;
 }
 
-#date {
-    font-size: calc(12px + 0.7vw);
-    text-align: right;
-}
-
-#weather-description:first-letter {
-    text-transform: capitalize;
-}
-
-.searchbar input {
-    height: calc(1.5em + 0.75rem + 2px);
-    width: 100%;
-    border-radius: 6px;
+a:hover {
+    color: rgba(255, 69, 0, 0.6);
+    cursor: pointer;
 }
 
 button {
     border-radius: 6px;
     width: 100%;
     height: calc(1.5em + 0.75rem + 2px);
+    box-shadow: rgba(17, 17, 26, 0.05) 0px 4px 16px,
+        rgba(17, 17, 26, 0.05) 0px 8px 32px;
 }
 
 button.submit {
@@ -69,6 +64,7 @@ button.refresh {
     background: none;
     color: orangered;
     transition: all 200ms ease-in-out;
+    box-shadow: none;
 }
 
 button.refresh:hover {
@@ -76,25 +72,37 @@ button.refresh:hover {
     color: rgba(0, 0, 0, 0.8);
 }
 
+.searchbar input {
+    height: calc(1.5em + 0.75rem + 2px);
+    width: 100%;
+    border-radius: 6px;
+    box-shadow: rgba(17, 17, 26, 0.05) 0px 4px 16px,
+        rgba(17, 17, 26, 0.05) 0px 8px 32px;
+}
+
 .today {
     position: relative;
     background-color: rgba(255, 69, 0, 0.05);
     border: 2px orangered solid;
     border-radius: 6px;
+    box-shadow: rgba(17, 17, 26, 0.05) 0px 4px 16px,
+        rgba(17, 17, 26, 0.05) 0px 8px 32px;
     margin: 10px auto;
+}
+
+.today img {
+    display: block;
+    margin: 0 auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    opacity: 0.85;
+    width: 180px;
 }
 
 .today strong {
     color: orangered;
     font-size: calc(28px + 4vw);
     font-weight: 600;
-}
-
-.today i {
-    display: block;
-    font-size: calc(70px + 4vw);
-    text-align: center;
-    margin: 30px;
 }
 
 .today ul {
@@ -109,7 +117,11 @@ button.refresh:hover {
 
 .today a {
     text-decoration: none;
-    color: rgba(255, 69, 0, 0.6);
+    color: rgba(255, 69, 0, 0.5);
+}
+
+.today a:hover {
+    color: orangered;
 }
 
 a.active {
@@ -126,6 +138,16 @@ a.active:hover {
     display: block;
     font-size: calc(16px + 1vw);
     font-weight: 600;
+    text-transform: capitalize;
+}
+
+.date {
+    font-size: calc(12px + 0.7vw);
+    text-align: right;
+}
+
+.description:first-letter {
+    text-transform: capitalize;
 }
 
 .temp-units {
@@ -141,6 +163,8 @@ a.active:hover {
     border-radius: 6px;
     margin: 0 auto;
     text-align: center;
+    box-shadow: rgba(17, 17, 26, 0.05) 0px 4px 16px,
+        rgba(17, 17, 26, 0.05) 0px 8px 32px;
 }
 
 .forecast i {
