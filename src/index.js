@@ -37,18 +37,14 @@ function formatDate(today) {
     return `${day} ${date} ${month} ${year}, ${hours}:${minutes}`;
 }
 
-let now = new Date();
-let liDate = document.querySelector("#date");
-
-liDate.innerHTML = formatDate(now);
-
 //Search Engine Location
 
 function inputWeather(response) {
-    console.log(response);
+    celsiusTemp = response.data.main.temp;
+
     let city = response.data.name;
     let cityElement = document.querySelector("#city");
-    let temperature = Math.round(response.data.main.temp);
+    let temperature = Math.round(celsiusTemp);
     let temperatureElement = document.querySelector("#current-temp");
     let country = response.data.sys.country;
     let countryElement = document.querySelector("#country");
@@ -58,6 +54,7 @@ function inputWeather(response) {
     let windElement = document.querySelector("#wind");
     let description = response.data.weather[0].description;
     let descriptionElement = document.querySelector("#weather-description");
+
     cityElement.innerHTML = city;
     descriptionElement.innerHTML = description;
     windElement.innerHTML = `Wind: ${wind} km/h`;
@@ -78,8 +75,25 @@ function handleSubmit(event) {
     citySearch(searchInput.value);
 }
 
-let form = document.querySelector("#search-form");
-form.addEventListener("submit", handleSubmit);
+//Fahrenheit Conversion
+
+function displayFahrenheitTemp(event) {
+    event.preventDefault();
+    let tempElement = document.querySelector("#current-temp");
+    celsiusLink.classList.remove("active");
+    fahrenheitLink.classList.add("active");
+    let fahrenheitTemp = (celsiusTemp * 9) / 5 + 32;
+    tempElement.innerHTML = Math.round(fahrenheitTemp);
+}
+
+//Celsius Conversion
+function displayCelsiusTemp(event) {
+    event.preventDefault();
+    let tempElement = document.querySelector("#current-temp");
+    celsiusLink.classList.add("active");
+    fahrenheitLink.classList.remove("active");
+    tempElement.innerHTML = Math.round(celsiusTemp);
+}
 
 //Current Location
 function locationWeather(response) {
@@ -117,6 +131,23 @@ function showPosition(position) {
 function geolocation() {
     navigator.geolocation.getCurrentPosition(showPosition);
 }
+
+//Global variable
+let celsiusTemp = null;
+
+let now = new Date();
+let liDate = document.querySelector("#date");
+
+liDate.innerHTML = formatDate(now);
+
+let form = document.querySelector("#search-form");
+form.addEventListener("submit", handleSubmit);
+
+let fahrenheitLink = document.querySelector("#fahrenheit-link");
+fahrenheitLink.addEventListener("click", displayFahrenheitTemp);
+
+let celsiusLink = document.querySelector("#celsius-link");
+celsiusLink.addEventListener("click", displayCelsiusTemp);
 
 let currentLocation = document.querySelector("#current-location");
 currentLocation.addEventListener("click", geolocation);

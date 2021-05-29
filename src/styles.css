@@ -84,21 +84,9 @@ button.refresh:hover {
     margin: 10px auto;
 }
 
-.today span {
-    display: block;
-    font-size: calc(16px + 1vw);
-    font-weight: 600;
-}
-
 .today strong {
     color: orangered;
     font-size: calc(28px + 4vw);
-    font-weight: 600;
-}
-
-.today sup {
-    color: orangered;
-    font-size: calc(24px + 1vw);
     font-weight: 600;
 }
 
@@ -117,6 +105,35 @@ button.refresh:hover {
     padding: 0;
     text-align: right;
     font-size: calc(12px + 0.6vw);
+}
+
+.today a {
+    text-decoration: none;
+    color: rgba(255, 69, 0, 0.6);
+}
+
+a.active {
+    color: orangered;
+    cursor: default;
+    text-decoration: none;
+}
+
+a.active:hover {
+    color: orangered;
+}
+
+.city {
+    display: block;
+    font-size: calc(16px + 1vw);
+    font-weight: 600;
+}
+
+.temp-units {
+    position: relative;
+    top: -30px;
+    color: orangered;
+    font-size: calc(20px + 0.5vw);
+    font-weight: 600;
 }
 
 .forecast {
