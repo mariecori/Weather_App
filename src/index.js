@@ -46,6 +46,8 @@ liDate.innerHTML = formatDate(now);
 
 function inputWeather(response) {
     console.log(response);
+    let city = response.data.name;
+    let cityElement = document.querySelector("#city");
     let temperature = Math.round(response.data.main.temp);
     let temperatureElement = document.querySelector("#current-temp");
     let country = response.data.sys.country;
@@ -56,6 +58,7 @@ function inputWeather(response) {
     let windElement = document.querySelector("#wind");
     let description = response.data.weather[0].description;
     let descriptionElement = document.querySelector("#weather-description");
+    cityElement.innerHTML = city;
     descriptionElement.innerHTML = description;
     windElement.innerHTML = `Wind: ${wind} km/h`;
     humidityElement.innerHTML = `Humidity: ${humidity}%`;
@@ -67,10 +70,10 @@ function citySearch(event) {
     event.preventDefault();
     let searchInput = document.querySelector("#city-input");
 
-    let city = document.querySelector("#city");
-    if (searchInput.value) {
-        city.innerHTML = `${searchInput.value}`;
-    }
+    //let city = document.querySelector("#city");
+    //if (searchInput.value) {
+    //    city.innerHTML = `${searchInput.value}`;
+    //}
     let apiKey = "dd457ecaa9a81e873abe2de88465eeac";
     let apiURL = `https://api.openweathermap.org/data/2.5/weather?q=${searchInput.value}&units=metric&appid=${apiKey}`;
     console.log(apiURL);

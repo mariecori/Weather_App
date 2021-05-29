@@ -22,7 +22,7 @@ p {
     text-align: right;
 }
 
-#weather-description {
+#weather-description:first-letter {
     text-transform: capitalize;
 }
 
