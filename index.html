@@ -21,7 +21,7 @@
         <div class="container">
             <div class="weather-app">
                 <form class="row searchbar" id="search-form">
-                    <div class="col-9">
+                    <div class="col-8 col-md-10">
                         <input
                             type="text"
                             name="city"
@@ -31,23 +31,18 @@
                             autocomplete="off"
                         />
                     </div>
-                    <div class="col-1">
+                    <div class="col-2 col-md-1">
                         <button type="submit" class="submit">
                             <i class="fas fa-search"></i>
                         </button>
                     </div>
-                    <div class="col-1">
+                    <div class="col-2 col-md-1">
                         <button
                             type="button"
                             class="current-location"
                             id="current-location"
                         >
                             <i class="fas fa-map-marker-alt"></i>
-                        </button>
-                    </div>
-                    <div class="col-1">
-                        <button type="submit" class="refresh">
-                            <i class="fas fa-redo-alt"></i>
                         </button>
                     </div>
                 </form>
@@ -80,58 +75,7 @@
                         </ul>
                     </div>
                 </div>
-                <div class="row forecast">
-                    <div class="col">
-                        <p>
-                            Mon
-                            <br />
-                            19 Apr
-                        </p>
-                        <i class="fas fa-cloud"></i>
-                        <br />
-                        <strong>8<sup>°C</sup></strong>
-                    </div>
-                    <div class="col">
-                        <p>
-                            Tue
-                            <br />
-                            20 Apr
-                        </p>
-                        <i class="fas fa-cloud-sun"></i>
-                        <br />
-                        <strong>10<sup>°C</sup></strong>
-                    </div>
-                    <div class="col">
-                        <p>
-                            Wed
-                            <br />
-                            21 Apr
-                        </p>
-                        <i class="fas fa-cloud-rain"></i>
-                        <br />
-                        <strong>11<sup>°C</sup></strong>
-                    </div>
-                    <div class="col">
-                        <p>
-                            Thu
-                            <br />
-                            22 Apr
-                        </p>
-                        <i class="fas fa-cloud-sun-rain"></i>
-                        <br />
-                        <strong>12<sup>°C</sup></strong>
-                    </div>
-                    <div class="col">
-                        <p>
-                            Fri
-                            <br />
-                            23 Apr
-                        </p>
-                        <i class="fas fa-sun"></i>
-                        <br />
-                        <strong>14<sup>°C</sup></strong>
-                    </div>
-                </div>
+                <div class="row forecast" id="forecast"></div>
                 <div class="footer">
                     <a
                         href="https://github.com/mariecori/Weather_App"

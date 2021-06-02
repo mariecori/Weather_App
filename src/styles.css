@@ -59,19 +59,6 @@ button.current-location:hover {
     border: 2px black solid;
 }
 
-button.refresh {
-    border: 0;
-    background: none;
-    color: orangered;
-    transition: all 200ms ease-in-out;
-    box-shadow: none;
-}
-
-button.refresh:hover {
-    cursor: pointer;
-    color: rgba(0, 0, 0, 0.8);
-}
-
 .searchbar input {
     height: calc(1.5em + 0.75rem + 2px);
     width: 100%;
@@ -96,7 +83,8 @@ button.refresh:hover {
     margin-top: 10px;
     margin-bottom: 10px;
     opacity: 0.85;
-    width: 180px;
+    width: 100%;
+    max-width: 180px;
 }
 
 .today strong {
@@ -172,11 +160,22 @@ a.active:hover {
     margin: 10px;
 }
 
+.forecast img {
+    width: 40px;
+    margin: 5px auto;
+}
+
 .forecast strong {
     color: orangered;
     font-size: calc(14px + 1vw);
     padding: 0;
 }
+
+strong.forecast-temp-min {
+    font-size: calc(12px + 0.8vw);
+    color: rgba(255, 69, 0, 0.6);
+}
+
 .footer {
     font-size: 12px;
     font-weight: 400;
